@@ -11,3 +11,5 @@ This is a simple tool that will only unzip - no zipping. It supports regular, pa
 * the option to open a new File Explorer window at the unzip location once finished
 
 Cancellation of the extraction process is also supported.
+
+This tool makes use of the excellent [SharpCompress library](https://github.com/adamhathcock/sharpcompress) for C#.
