@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,12 +17,10 @@ using SharpCompress.Factories;
 using SharpCompress.IO;
 using SharpCompress.Writers;
 
-
 namespace Unzipper
 {
     public partial class MainForm : Form
     {
-
         private string selectedArchiveFile;
         private string selectedOutputFolder;
         private string archivePassword;
@@ -400,4 +398,3 @@ namespace Unzipper
 
     }
 }
-
