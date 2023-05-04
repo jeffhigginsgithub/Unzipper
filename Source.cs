@@ -30,6 +30,7 @@ namespace Unzipper
         private string unzipErrorMessage;
         private int unzippedFileCount;
         private int zippedFileCount;
+        private bool archiveInfoLogged;
 
         BackgroundWorker unzipBW;
 
@@ -114,6 +115,7 @@ namespace Unzipper
 
         void unzipBW_DoWork(object sender, DoWorkEventArgs e)
         {
+            archiveInfoLogged = false;
             if (destinationRadioButton1.Checked == true)
             {
                 selectedOutputFolder = Path.GetDirectoryName(selectedArchiveFile) + @"\" + Path.GetFileNameWithoutExtension(selectedArchiveFile);
@@ -297,11 +299,12 @@ namespace Unzipper
             //If there aren't any errors then add the extracted file to the log            
             if (unzipErrorMessage == null)
             {
-                //First entry which details the archive to be unzipped (sinec number of files unzipped = 0)
-                if (unzippedFileCount == 0)
+                //First entry which details the archive to be unzipped
+                if (archiveInfoLogged == false)
                 {
                     unzipLogTextbox.SelectionFont = new Font(unzipLogTextbox.Font, FontStyle.Bold);
                     unzipLogTextbox.AppendText("Unzipping " + zippedFileCount + " file(s) from '" + selectedFileNameLabel.Text + "', please wait..." + Environment.NewLine);
+                    archiveInfoLogged = true;
                 }
                 //If files have been unzipped then log what they are and increase the progress bar value
                 else if (unzippedFolder == null)
