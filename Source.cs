@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -191,6 +191,7 @@ namespace Unzipper
                                 {
                                     unzipErrorMessage = "Cancelled";
                                     unzipBW.ReportProgress(unzippedFileCount);
+                                    System.Threading.Thread.Sleep(100);
                                     return;
                                 }
 
@@ -226,7 +227,7 @@ namespace Unzipper
                                 //Report to progress handler to update form
                                 unzipBW.ReportProgress(unzippedFileCount);
                                 //Slow it down a touch to ensure duplicate lines aren't recorded in the log
-                                System.Threading.Thread.Sleep(50);
+                                System.Threading.Thread.Sleep(100);
                             }
 
                             //Password errors for the log
@@ -256,7 +257,7 @@ namespace Unzipper
                                     unzippedFile = entry.ToString();
                                     unzipErrorMessage = "File already exists";
                                     unzipBW.ReportProgress(unzippedFileCount);
-                                    System.Threading.Thread.Sleep(50);
+                                    System.Threading.Thread.Sleep(100);
                                 }    
                             }
                         }
@@ -278,6 +279,7 @@ namespace Unzipper
                     }
                     unzipErrorMessage = "Invalid password";
                     unzipBW.ReportProgress(unzippedFileCount);
+                    System.Threading.Thread.Sleep(100);
                     return;
                 }
         }
@@ -312,8 +314,8 @@ namespace Unzipper
                 }
                 else
                 {
-                    //Uncomment below line to log folder creation
-                    //unzipLogTextbox.AppendText("Created folder " + unzippedFolder + Environment.NewLine);
+                    //Log folder extraction
+                    unzipLogTextbox.AppendText("Created folder " + unzippedFolder + Environment.NewLine);
                 }
             }
             //Log the files that already exist in red, assuming 'overwrite files' isn't selected
@@ -325,6 +327,7 @@ namespace Unzipper
                 Double unzippedFileCountProgress = unzippedFileCount;
                 Double progressTotal = 100 / zippedFileCountProgress * unzippedFileCountProgress;
                 unzipProgressBar.Value = Convert.ToInt32(progressTotal);
+                unzipErrorMessage = null;
             }
             //Log that the cancel button has been pressed
             else if (unzipErrorMessage == "Cancelled")
