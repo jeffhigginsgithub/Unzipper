@@ -40,7 +40,6 @@ namespace Unzipper
         {
             InitializeComponent();
             //Check to see if opened from a Context Menu. If opened from a Context Menu, set file/folder values, otherwise null
-
             try
             {
                 fileName = Environment.GetCommandLineArgs()[1];

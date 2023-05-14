@@ -32,7 +32,7 @@ namespace Unzipper
             string contextMenuRegistryLocation = "HKEY_CURRENT_USER\\SOFTWARE\\Classes\\*\\shell\\Open with Unzipper";
             string contextMenuCommandLocation = contextMenuRegistryLocation + @"\\command";
             string contextMenuIconString = unzipperLocation + @"\Unzipper.ico";
-            string contextMenuCommandString = unzipperLocation + @"\Unzipper.exe";
+            string contextMenuCommandString = unzipperLocation + @"\Unzipper.exe ""%1""";
             //Icon and executable
             Registry.SetValue(contextMenuRegistryLocation, "Icon", contextMenuIconString);
             Registry.SetValue(contextMenuCommandLocation, "", contextMenuCommandString);
