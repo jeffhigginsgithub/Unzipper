@@ -17,6 +17,7 @@ using SharpCompress.Factories;
 using SharpCompress.IO;
 using SharpCompress.Writers;
 using System.Diagnostics;
+using Microsoft.Win32;
 
 namespace Unzipper
 {
@@ -39,6 +40,28 @@ namespace Unzipper
         public Unzipper()
         {
             InitializeComponent();
+
+            //Checks to see if Unzipper has already been added to the Context Menu - if not, then adds
+            var regCMTest = Registry.CurrentUser.OpenSubKey(@"HKEY_CURRENT_USER\\SOFTWARE\\Classes\\CompressedFolder\\shell\\Open with Unzipper");
+            if (regCMTest == null)
+            {
+                //Get location Unzipper was launched from
+                string unzipperLocation = Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]);
+                //Create array of supported filetypes. Windows 10 uses 'CompressedFolder' instead of '.zip'.
+                string[] fileTypes = { "CompressedFolder", ".7z", ".rar", ".zipx", ".tar", ".gz" };
+                foreach (string regFileTypeEntry in fileTypes)
+                {
+                    string contextMenuRegistryLocation = "HKEY_CURRENT_USER\\SOFTWARE\\Classes\\" + regFileTypeEntry + "\\shell\\Open with Unzipper";
+                    string contextMenuCommandLocation = contextMenuRegistryLocation + @"\\command";
+                    string contextMenuIconString = unzipperLocation + @"\Unzipper.ico";
+                    string contextMenuCommandString = unzipperLocation + @"\Unzipper.exe ""%1""";
+                    //Icon and executable
+                    Registry.SetValue(contextMenuRegistryLocation, "Icon", contextMenuIconString);
+                    Registry.SetValue(contextMenuCommandLocation, "", contextMenuCommandString);
+                }
+
+            }
+
             //Check to see if opened from a Context Menu. If opened from a Context Menu, set file/folder values, otherwise null
             try
             {
@@ -84,9 +107,9 @@ namespace Unzipper
 
         private void fileSelectButton_Click(object sender, EventArgs e)
         {
-            //Open the zip file choice dialog, filtering to .zip .7z .rar .zipx
+            //Open the zip file choice dialog, filtering to supported file types
             OpenFileDialog fileSelectDialog = new OpenFileDialog();
-            fileSelectDialog.Filter = "Archives|*.zip;*.7z;*.rar;*.zipx|All files (*.*)|*.*";
+            fileSelectDialog.Filter = "Archives|*.zip;*.7z;*.rar;*.zipx;*.tar;*.gz|All files (*.*)|*.*";
             DialogResult fileSelectResult = fileSelectDialog.ShowDialog();
             //If a file is selected
             if (fileSelectResult == DialogResult.OK)
