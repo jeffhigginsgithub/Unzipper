@@ -15,8 +15,15 @@ This program will only unzip - no zipping. It supports regular, password-protect
 
 Cancellation of the extraction process is also supported.
 
-To add Unzipper to the File Explorer Context Menu, click the 'Add to Context Menu' button found on the About form.
+Unzipper will check to see if the Context Menu item for supported file types already exists, and if not then creates it on startup. To manually add, update, or remove Unzipper to/from the File Explorer Context Menu, click the appropriate button found on the About form.
 
 ![alt text](https://github.com/jeffhigginsgithub/Unzipper/blob/main/UnzipperCM.png)
 
 This tool makes use of the excellent [SharpCompress library](https://github.com/adamhathcock/sharpcompress) for C#.
+
+
+v1.1 - Add Context Menu item if it doesn't already exist on application startup 
+     - Added 'Remove from Context Menu' button on the About form
+     - Added supported file types '.tar' and '.gz'
+
+v1.0 - Initial release
