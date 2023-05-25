@@ -1,0 +1,73 @@
+C:\Users\Jeff\source\repos\Zip Extractor\bin\Debug\SharpCompress.dll
+C:\Users\Jeff\source\repos\Zip Extractor\bin\Debug\System.Buffers.dll
+C:\Users\Jeff\source\repos\Zip Extractor\bin\Debug\System.Memory.dll
+C:\Users\Jeff\source\repos\Zip Extractor\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Jeff\source\repos\Zip Extractor\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Jeff\source\repos\Zip Extractor\bin\Debug\System.Text.Encoding.CodePages.dll
+C:\Users\Jeff\source\repos\Zip Extractor\bin\Debug\System.Buffers.xml
+C:\Users\Jeff\source\repos\Zip Extractor\bin\Debug\System.Memory.xml
+C:\Users\Jeff\source\repos\Zip Extractor\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Jeff\source\repos\Zip Extractor\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Jeff\source\repos\Zip Extractor\bin\Debug\System.Text.Encoding.CodePages.xml
+C:\Users\Jeff\source\repos\Zip Extractor\obj\Debug\Zip Extractor.csproj.AssemblyReference.cache
+C:\Users\Jeff\source\repos\Zip Extractor\obj\Debug\Zip Extractor.csproj.SuggestedBindingRedirects.cache
+C:\Users\Jeff\source\repos\Zip Extractor\obj\Debug\Zip Extractor.csproj.GenerateResource.cache
+C:\Users\Jeff\source\repos\Zip Extractor\obj\Debug\Zip Extractor.csproj.CoreCompileInputs.cache
+C:\Users\Jeff\source\repos\Zip Extractor\obj\Debug\Zip Extractor.csproj.CopyComplete
+C:\Users\Jeff\source\repos\Zip Extractor\bin\Debug\Unzipper.exe.config
+C:\Users\Jeff\source\repos\Zip Extractor\bin\Debug\Unzipper.exe
+C:\Users\Jeff\source\repos\Zip Extractor\bin\Debug\Unzipper.pdb
+C:\Users\Jeff\source\repos\Zip Extractor\obj\Debug\Unzipper.Properties.Resources.resources
+C:\Users\Jeff\source\repos\Zip Extractor\obj\Debug\Unzipper.exe
+C:\Users\Jeff\source\repos\Zip Extractor\obj\Debug\Unzipper.pdb
+C:\Users\Jeff\source\repos\Zip Extractor\obj\Debug\Unzipper.MainForm.resources
+C:\Users\Jeff\source\repos\Zip Extractor\obj\Debug\Unzipper.About.resources
+C:\Users\Jeff\source\repos\Zip Extractor\obj\Debug\Unzipper.Unzipper.resources
+C:\Users\jhiggins\source\repos\Zip Extractor\bin\Debug\Unzipper.exe.config
+C:\Users\jhiggins\source\repos\Zip Extractor\bin\Debug\Unzipper.exe
+C:\Users\jhiggins\source\repos\Zip Extractor\bin\Debug\Unzipper.pdb
+C:\Users\jhiggins\source\repos\Zip Extractor\bin\Debug\SharpCompress.dll
+C:\Users\jhiggins\source\repos\Zip Extractor\bin\Debug\System.Buffers.dll
+C:\Users\jhiggins\source\repos\Zip Extractor\bin\Debug\System.Memory.dll
+C:\Users\jhiggins\source\repos\Zip Extractor\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\jhiggins\source\repos\Zip Extractor\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\jhiggins\source\repos\Zip Extractor\bin\Debug\System.Text.Encoding.CodePages.dll
+C:\Users\jhiggins\source\repos\Zip Extractor\bin\Debug\System.Buffers.xml
+C:\Users\jhiggins\source\repos\Zip Extractor\bin\Debug\System.Memory.xml
+C:\Users\jhiggins\source\repos\Zip Extractor\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\jhiggins\source\repos\Zip Extractor\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\jhiggins\source\repos\Zip Extractor\bin\Debug\System.Text.Encoding.CodePages.xml
+C:\Users\jhiggins\source\repos\Zip Extractor\obj\Debug\Zip Extractor.csproj.AssemblyReference.cache
+C:\Users\jhiggins\source\repos\Zip Extractor\obj\Debug\Zip Extractor.csproj.SuggestedBindingRedirects.cache
+C:\Users\jhiggins\source\repos\Zip Extractor\obj\Debug\Unzipper.About.resources
+C:\Users\jhiggins\source\repos\Zip Extractor\obj\Debug\Unzipper.Properties.Resources.resources
+C:\Users\jhiggins\source\repos\Zip Extractor\obj\Debug\Zip Extractor.csproj.GenerateResource.cache
+C:\Users\jhiggins\source\repos\Zip Extractor\obj\Debug\Zip Extractor.csproj.CoreCompileInputs.cache
+C:\Users\jhiggins\source\repos\Zip Extractor\obj\Debug\Zip Extractor.csproj.CopyComplete
+C:\Users\jhiggins\source\repos\Zip Extractor\obj\Debug\Unzipper.exe
+C:\Users\jhiggins\source\repos\Zip Extractor\obj\Debug\Unzipper.pdb
+C:\Users\jhiggins\source\repos\Zip Extractor\obj\Debug\Unzipper.Unzipper.resources
+C:\Users\Jeff\Source\Repos\Unzipper\bin\Debug\Unzipper.exe.config
+C:\Users\Jeff\Source\Repos\Unzipper\bin\Debug\Unzipper.exe
+C:\Users\Jeff\Source\Repos\Unzipper\bin\Debug\Unzipper.pdb
+C:\Users\Jeff\Source\Repos\Unzipper\bin\Debug\SharpCompress.dll
+C:\Users\Jeff\Source\Repos\Unzipper\bin\Debug\System.Buffers.dll
+C:\Users\Jeff\Source\Repos\Unzipper\bin\Debug\System.Memory.dll
+C:\Users\Jeff\Source\Repos\Unzipper\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Jeff\Source\Repos\Unzipper\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Jeff\Source\Repos\Unzipper\bin\Debug\System.Text.Encoding.CodePages.dll
+C:\Users\Jeff\Source\Repos\Unzipper\bin\Debug\System.Buffers.xml
+C:\Users\Jeff\Source\Repos\Unzipper\bin\Debug\System.Memory.xml
+C:\Users\Jeff\Source\Repos\Unzipper\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Jeff\Source\Repos\Unzipper\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Jeff\Source\Repos\Unzipper\bin\Debug\System.Text.Encoding.CodePages.xml
+C:\Users\Jeff\Source\Repos\Unzipper\obj\Debug\Zip Extractor.csproj.AssemblyReference.cache
+C:\Users\Jeff\Source\Repos\Unzipper\obj\Debug\Zip Extractor.csproj.SuggestedBindingRedirects.cache
+C:\Users\Jeff\Source\Repos\Unzipper\obj\Debug\Unzipper.About.resources
+C:\Users\Jeff\Source\Repos\Unzipper\obj\Debug\Unzipper.Properties.Resources.resources
+C:\Users\Jeff\Source\Repos\Unzipper\obj\Debug\Unzipper.Unzipper.resources
+C:\Users\Jeff\Source\Repos\Unzipper\obj\Debug\Zip Extractor.csproj.GenerateResource.cache
+C:\Users\Jeff\Source\Repos\Unzipper\obj\Debug\Zip Extractor.csproj.CoreCompileInputs.cache
+C:\Users\Jeff\Source\Repos\Unzipper\obj\Debug\Zip Extractor.csproj.CopyComplete
+C:\Users\Jeff\Source\Repos\Unzipper\obj\Debug\Unzipper.exe
+C:\Users\Jeff\Source\Repos\Unzipper\obj\Debug\Unzipper.pdb
