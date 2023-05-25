@@ -1,6 +1,8 @@
 # Unzipper
 A simple tool for (only) unzipping archives.
 
+Download [here](https://github.com/jeffhigginsgithub/Unzipper/blob/main/Unzipper.zip).
+
 ![alt text](https://github.com/jeffhigginsgithub/Unzipper/blob/main/Unzipper.png)
 
 Some environments don't allow software to be installed if the user doesn't have local administrator permissions, and others won't allow software on a user's system if it's able to create encrypted files. This can cause problems when encrypted archives need to be extracted, as most (all?) free tools that can decrypt archives also have the ability to create encrypted archives.
