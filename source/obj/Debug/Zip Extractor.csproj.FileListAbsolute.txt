@@ -71,3 +71,27 @@ C:\Users\Jeff\Source\Repos\Unzipper\obj\Debug\Zip Extractor.csproj.CoreCompileIn
 C:\Users\Jeff\Source\Repos\Unzipper\obj\Debug\Zip Extractor.csproj.CopyComplete
 C:\Users\Jeff\Source\Repos\Unzipper\obj\Debug\Unzipper.exe
 C:\Users\Jeff\Source\Repos\Unzipper\obj\Debug\Unzipper.pdb
+C:\Users\Jeff\Source\Repos\jeffhigginsgithub\Unzipper\source\bin\Debug\Unzipper.exe.config
+C:\Users\Jeff\Source\Repos\jeffhigginsgithub\Unzipper\source\bin\Debug\Unzipper.exe
+C:\Users\Jeff\Source\Repos\jeffhigginsgithub\Unzipper\source\bin\Debug\Unzipper.pdb
+C:\Users\Jeff\Source\Repos\jeffhigginsgithub\Unzipper\source\bin\Debug\SharpCompress.dll
+C:\Users\Jeff\Source\Repos\jeffhigginsgithub\Unzipper\source\bin\Debug\System.Buffers.dll
+C:\Users\Jeff\Source\Repos\jeffhigginsgithub\Unzipper\source\bin\Debug\System.Memory.dll
+C:\Users\Jeff\Source\Repos\jeffhigginsgithub\Unzipper\source\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Jeff\Source\Repos\jeffhigginsgithub\Unzipper\source\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Jeff\Source\Repos\jeffhigginsgithub\Unzipper\source\bin\Debug\System.Text.Encoding.CodePages.dll
+C:\Users\Jeff\Source\Repos\jeffhigginsgithub\Unzipper\source\bin\Debug\System.Buffers.xml
+C:\Users\Jeff\Source\Repos\jeffhigginsgithub\Unzipper\source\bin\Debug\System.Memory.xml
+C:\Users\Jeff\Source\Repos\jeffhigginsgithub\Unzipper\source\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Jeff\Source\Repos\jeffhigginsgithub\Unzipper\source\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Jeff\Source\Repos\jeffhigginsgithub\Unzipper\source\bin\Debug\System.Text.Encoding.CodePages.xml
+C:\Users\Jeff\Source\Repos\jeffhigginsgithub\Unzipper\source\obj\Debug\Zip Extractor.csproj.AssemblyReference.cache
+C:\Users\Jeff\Source\Repos\jeffhigginsgithub\Unzipper\source\obj\Debug\Zip Extractor.csproj.SuggestedBindingRedirects.cache
+C:\Users\Jeff\Source\Repos\jeffhigginsgithub\Unzipper\source\obj\Debug\Unzipper.About.resources
+C:\Users\Jeff\Source\Repos\jeffhigginsgithub\Unzipper\source\obj\Debug\Unzipper.Properties.Resources.resources
+C:\Users\Jeff\Source\Repos\jeffhigginsgithub\Unzipper\source\obj\Debug\Unzipper.Unzipper.resources
+C:\Users\Jeff\Source\Repos\jeffhigginsgithub\Unzipper\source\obj\Debug\Zip Extractor.csproj.GenerateResource.cache
+C:\Users\Jeff\Source\Repos\jeffhigginsgithub\Unzipper\source\obj\Debug\Zip Extractor.csproj.CoreCompileInputs.cache
+C:\Users\Jeff\Source\Repos\jeffhigginsgithub\Unzipper\source\obj\Debug\Zip Extractor.csproj.CopyComplete
+C:\Users\Jeff\Source\Repos\jeffhigginsgithub\Unzipper\source\obj\Debug\Unzipper.exe
+C:\Users\Jeff\Source\Repos\jeffhigginsgithub\Unzipper\source\obj\Debug\Unzipper.pdb

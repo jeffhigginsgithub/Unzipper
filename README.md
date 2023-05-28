@@ -24,6 +24,9 @@ Unzipper will check to see if the Context Menu item for supported file types alr
 This tool makes use of the excellent [SharpCompress library](https://github.com/adamhathcock/sharpcompress) for C#.
 
 
+v1.2
+* Added support for Zip and 7-Zip split archives
+
 v1.1:
 * Add Context Menu item if it doesn't already exist on application startup 
 * Added 'Remove from Context Menu' button on the About form

@@ -125,7 +125,7 @@
 
 '.zip', '.7z', '.rar', '.zipx', '.tar', '.gz'
 
-Both regular and password-protected archives, including those with filename encryption, are supported.
+Both regular and password-protected archives, including those with filename encryption, are supported. Split Zip and 7-Zip archives are also supported.
 
 **Files with filename-level encryption may not alert if an incorrect password is used, so please double-check the password if the extracted files are 0KB in size.**</value>
   </data>

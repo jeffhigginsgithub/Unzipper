@@ -18,7 +18,7 @@ namespace Unzipper
         //Get location Unzipper was launched from
         private string unzipperLocation = Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]);
         //Create array of supported filetypes. Windows 10 uses 'CompressedFolder' instead of '.zip'.
-        string[] fileTypes = { "CompressedFolder", ".7z", ".rar", ".zipx", ".tar", ".gz" };
+        string[] fileTypes = { "CompressedFolder", ".7z", ".rar", ".zipx", ".tar", ".gz", ".001", ".z01" };
 
         public About()
         {

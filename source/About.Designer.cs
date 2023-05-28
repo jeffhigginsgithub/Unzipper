@@ -94,7 +94,7 @@
             this.versionLabel.Name = "versionLabel";
             this.versionLabel.Size = new System.Drawing.Size(28, 13);
             this.versionLabel.TabIndex = 0;
-            this.versionLabel.Text = "v1.1";
+            this.versionLabel.Text = "v1.2";
             this.versionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // unzipperLogo

@@ -25,6 +25,8 @@ namespace Unzipper
     {
         private string fileName;
         private string destinationFolder;
+        private string splitArchiveFileType;
+        private string splitArchiveNoExtension;
 
         private string archivePassword;
         private bool subfolderCreated;
@@ -48,7 +50,7 @@ namespace Unzipper
                 //Get location Unzipper was launched from
                 string unzipperLocation = Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]);
                 //Create array of supported filetypes. Windows 10 uses 'CompressedFolder' instead of '.zip'.
-                string[] fileTypes = { "CompressedFolder", ".7z", ".rar", ".zipx", ".tar", ".gz" };
+                string[] fileTypes = { "CompressedFolder", ".7z", ".rar", ".zipx", ".tar", ".gz", ".001", ".z01" };
                 foreach (string regFileTypeEntry in fileTypes)
                 {
                     string contextMenuRegistryLocation = "HKEY_CURRENT_USER\\SOFTWARE\\Classes\\" + regFileTypeEntry + "\\shell\\Open with Unzipper";
@@ -59,14 +61,24 @@ namespace Unzipper
                     Registry.SetValue(contextMenuRegistryLocation, "Icon", contextMenuIconString);
                     Registry.SetValue(contextMenuCommandLocation, "", contextMenuCommandString);
                 }
-
             }
-
+            
             //Check to see if opened from a Context Menu. If opened from a Context Menu, set file/folder values, otherwise null
             try
             {
                 fileName = Environment.GetCommandLineArgs()[1];
-                destinationFolder = Path.GetDirectoryName(Environment.GetCommandLineArgs()[1]) + @"\" + Path.GetFileNameWithoutExtension(Environment.GetCommandLineArgs()[1]) + @"\";
+                //if (fileName.Substring(fileName.Length - 4) == ".z01" || fileName.Substring(fileName.Length - 4) == ".001")
+                if (Path.GetExtension(fileName) == ".z01" || Path.GetExtension(fileName) == ".001")
+                {
+                    splitArchiveFileType = Path.GetFileNameWithoutExtension(fileName);
+                    splitArchiveNoExtension = Path.GetFileNameWithoutExtension(splitArchiveFileType);
+                    destinationFolder = Path.GetDirectoryName(fileName) + @"\" + splitArchiveNoExtension + @"\";
+                }
+                else
+                {
+                    destinationFolder = Path.GetDirectoryName(fileName) + @"\" + Path.GetFileNameWithoutExtension(fileName) + @"\";
+                }
+                destinationTextbox.Text = destinationFolder;
             }
             catch
             {
@@ -102,21 +114,33 @@ namespace Unzipper
             {
                 passwordTextbox.Enabled = false;
             }
-
         }
 
         private void fileSelectButton_Click(object sender, EventArgs e)
         {
+            //Clear any existing split file info
+            splitArchiveNoExtension = null;
+            splitArchiveFileType = null;
             //Open the zip file choice dialog, filtering to supported file types
             OpenFileDialog fileSelectDialog = new OpenFileDialog();
-            fileSelectDialog.Filter = "Archives|*.zip;*.7z;*.rar;*.zipx;*.tar;*.gz|All files (*.*)|*.*";
+            fileSelectDialog.Filter = "Archives|*.zip;*.7z;*.rar;*.zipx;*.tar;*.gz;*.001;*.z01|All files (*.*)|*.*";
             DialogResult fileSelectResult = fileSelectDialog.ShowDialog();
             //If a file is selected
             if (fileSelectResult == DialogResult.OK)
             {
                 fileNameTextbox.Text = fileSelectDialog.FileName;
                 //Set the destination textbox to automatic subfolder creation
-                destinationTextbox.Text = Path.GetDirectoryName(fileNameTextbox.Text) + @"\" + Path.GetFileNameWithoutExtension(fileNameTextbox.Text) + @"\";
+                fileName = fileNameTextbox.Text;
+                if (fileName.Substring(fileName.Length - 4) == ".z01" || fileName.Substring(fileName.Length - 4) == ".001")
+                {
+                    splitArchiveFileType = Path.GetFileNameWithoutExtension(fileName);
+                    splitArchiveNoExtension = Path.GetFileNameWithoutExtension(splitArchiveFileType);
+                    destinationTextbox.Text = Path.GetDirectoryName(fileNameTextbox.Text) + @"\" + splitArchiveNoExtension + @"\";
+                }
+                else
+                {
+                    destinationTextbox.Text = Path.GetDirectoryName(fileNameTextbox.Text) + @"\" + Path.GetFileNameWithoutExtension(fileNameTextbox.Text) + @"\";
+                }
             }
         }
 
@@ -124,7 +148,7 @@ namespace Unzipper
         {
             FolderBrowserDialog folderSelectDialog = new FolderBrowserDialog();
             folderSelectDialog.SelectedPath = Path.GetDirectoryName(fileNameTextbox.Text);
-            System.Threading.Thread.Sleep(100);
+            System.Threading.Thread.Sleep(100); 
             //This key combo should scroll the dialog box to the selected folder
             SendKeys.Send("{TAB}{TAB}{RIGHT}");
             DialogResult folderSelectResult = folderSelectDialog.ShowDialog();
@@ -143,10 +167,10 @@ namespace Unzipper
             }
             fileName = fileNameTextbox.Text;
             destinationFolder = destinationTextbox.Text;
+           
             cancelUnzipButton.Visible = true;
             unzipBW.RunWorkerAsync();
         }
-
 
         void unzipBW_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -162,12 +186,36 @@ namespace Unzipper
                 subfolderCreated = false;
             }
 
+            //If it's a split archive
+            if (splitArchiveNoExtension != null)
+            {
+                //Get the names of all of the related files
+                string[] splitArchiveFiles = Directory.GetFiles(Path.GetDirectoryName(fileName), splitArchiveNoExtension + ".*", SearchOption.TopDirectoryOnly);
+                //Create a new file to store the combined parts
+                using (var combinedArchive = File.Create(Path.GetDirectoryName(fileName) + @"\" + splitArchiveFileType))
+                {
+                    //For each split part
+                    for (int i = 0; i < splitArchiveFiles.Length ; i++)
+                    {
+                        //Open for reading
+                        using (var opensplitFiles = File.OpenRead(splitArchiveFiles[i].ToString()))
+                        {
+                            //Then save to the new file
+                            opensplitFiles.CopyTo(combinedArchive);
+                        }
+                    }
+                    //Update the file to be unzipped to the new file
+                    fileName = Path.GetDirectoryName(fileName) + @"\" + splitArchiveFileType;
+                }
+            }
+
             unzipErrorMessage = null;
             zippedFileCount = 0;
-
+                
             try
             {
                 using (Stream stream = File.OpenRead(fileName))
+                {
                     try
                     {
                         //Open the archive to count the number of files inside
@@ -301,7 +349,9 @@ namespace Unzipper
                         System.Threading.Thread.Sleep(100);
                         return;
                     }
+                }
             }
+
             //If there's something else wrong with the file (or none selected)
             catch
             {
@@ -309,7 +359,7 @@ namespace Unzipper
                 unzipErrorMessage = "Problem with file name";
                 return;
             }
-        }
+         }
 
         //Update the main form while unzip runs in the background worker process
         void unzipBW_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -378,6 +428,11 @@ namespace Unzipper
                 unzipLogTextbox.AppendText("Done!" + Environment.NewLine);
             }
             cancelUnzipButton.Visible = false;
+            if (splitArchiveNoExtension != null)
+            {
+                //Delete combined file
+                File.Delete(fileName);
+            }
         }
 
         //Cancel the background worker/extraction process when the cancel button is clicked
